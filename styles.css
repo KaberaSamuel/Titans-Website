@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -29,12 +33,16 @@ body {
 }
 
 nav {
+  backdrop-filter: blur(0px);
+  height: 60px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 30px;
+  align-items: center;
+  padding: 0 30px;
   position: fixed;
   top: 0;
   width: 100%;
+  transition: 0.3s;
 }
 
 nav .logo {
@@ -69,4 +77,15 @@ nav .logo a {
   font-size: var(--lfs);
   font-weight: 600;
   text-shadow: 5px 5px 50px black;
+}
+
+#our-project {
+  background-color: white;
+  min-height: 100vh;
+  padding: 200px 80px;
+}
+
+#our-project > * {
+  margin: 300px 0;
+  text-align: center;
 }
