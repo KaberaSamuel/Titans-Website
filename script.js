@@ -27,3 +27,14 @@ window.addEventListener("scroll", () => {
 
   lastYScroll = yScroll;
 });
+
+// swiper js
+const swiper = new Swiper(".swiper-container", {
+  direction: "horizontal",
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

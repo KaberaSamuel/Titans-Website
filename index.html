@@ -12,6 +12,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js" defer></script>
   </head>
 
@@ -23,39 +32,61 @@
 
     <section id="home">
       <div class="welcome">
-        <p>Welcome to our homepage</p>
+        <p>
+          We're Titans, <br />
+          A non-profit organization aiming at promoting TVET Sector here in
+          Rwanda
+        </p>
+
+        <a href="#our-project">Learn More</a>
       </div>
 
-      <img src="./assets/agaseke.jpg" alt="" />
+      <img src="./assets/abstract.jpg" alt="" />
     </section>
 
     <section id="our-project">
-      <div>
-        <h2>Problem Background</h2>
-        <p>
-          In Rwanda there is a problem of undeveloped TVET sector. Statistics
-          says that only there are only 18% proffesionals in the TVET sector
-        </p>
+      <div class="about">
+        <h1>Mission Background</h1>
       </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <h2>Problem Background</h2>
+            <p>
+              In Rwanda there is a problem of undeveloped TVET sector.
+              Statistics says that only there are only 18% proffesionals in the
+              TVET sector
+            </p>
 
-      <div>
-        <h2>What our team will do</h2>
-        <p>
-          As the titans team we want to promote the TVET sector. We want to
-          educate people about the opportunities in the TVET sector and
-          gradually increase number of individuals in it [TVET sector]
-        </p>
-      </div>
+            <img src="./assets/meeting.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <h2>About Our Mission</h2>
+            <p>
+              As the titans team we want to promote the TVET sector. We want to
+              educate people about the opportunities in the TVET sector and
+              gradually increase number of individuals in it [TVET sector]
+            </p>
+            <img src="./assets/white-surface-top-view.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <h2>How We will Do It</h2>
+            <p>
+              Firstly, we will raise awareness (by campaigns), so that parents
+              and students can know exciting careers in the TVET sector. <br />
 
-      <div>
-        <h2>How we will do it</h2>
-        <p>
-          Firstly, we will raise awareness (by campaigns), so that parents and
-          students can know exciting careers in the TVET sector <br />
+              Secondly, we will work with the government of Rwanda to find a way
+              to lower the costs of TVET programs, so that more people can
+              afford them.
+            </p>
+            <img src="./assets/white-surface-top-view-2.jpg" />
+          </div>
+        </div>
 
-          Secondly, we will work with the government of Rwanda to find a way to
-          lower the costs of TVET programs, so that more people can afford them.
-        </p>
+        <!-- navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </section>
   </body>
