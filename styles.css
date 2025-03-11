@@ -1,8 +1,8 @@
 :root {
   --white: rgb(245, 245, 245);
   --sfs: 0.9rem;
-  --fs: 1.2rem;
-  --lfs: 1.5rem;
+  --fs: 1.1rem;
+  --lfs: 1.4rem;
 }
 
 * {
@@ -85,15 +85,15 @@ nav .logo a {
   gap: 20px;
   color: white;
   font-size: var(--lfs);
-  font-weight: 600;
+  font-weight: 400;
   padding: 0 30px;
 }
 
 #home .welcome a {
   border: 1px solid white;
-  padding: 4px 10px 6px;
+  padding: 5px 15px 7px;
   border-radius: 20px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 /* Project */
@@ -144,9 +144,5 @@ nav .logo a {
 }
 
 .swiper-container i {
-  color: black;
-}
-
-.swiper-container [class*="swiper-button"] {
   color: black;
 }
