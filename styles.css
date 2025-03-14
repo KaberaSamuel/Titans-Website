@@ -1,8 +1,11 @@
 :root {
-  --white: rgb(245, 245, 245);
+  --white: rgb(250, 250, 250);
+  --dark: rgb(10, 10, 10);
+  --xsfs: 0.5rem;
   --sfs: 0.9rem;
-  --fs: 1.1rem;
-  --lfs: 1.4rem;
+  --fs: 1.2rem;
+  --lfs: 1.6rem;
+  --xlfs: 2rem;
 }
 
 * {
@@ -31,6 +34,10 @@ img {
   object-fit: cover;
 }
 
+.image {
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
   color: black;
@@ -38,111 +45,108 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: var(--fs);
+  text-align: center;
+}
+
+body > section {
+  min-height: 100vh;
 }
 
 nav {
-  backdrop-filter: blur(0px);
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
   position: fixed;
-  top: 0;
-  width: 100%;
-  transition: 0.2s;
-}
-
-nav .logo {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: var(--fs);
-  text-transform: uppercase;
-}
-
-nav .logo a {
-  color: orangered;
-}
-
-/* Home */
-#home {
-  min-height: 100vh;
-}
-#home img {
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10;
-}
-
-#home .welcome {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  color: white;
-  font-size: var(--lfs);
-  font-weight: 400;
-  padding: 0 30px;
-}
-
-#home .welcome a {
-  border: 1px solid white;
-  padding: 5px 15px 7px;
+  bottom: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  margin: 0 auto;
+  background-color: rgba(25, 25, 25, 0.8);
+  padding: 10px 20px;
   border-radius: 20px;
-  font-size: 1.3rem;
+  display: flex;
+  gap: 30px;
 }
 
-/* Project */
-#our-project {
-  min-height: 100vh;
-  text-align: center;
-  padding: 10px;
+nav a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgb(180, 180, 180);
+}
+
+nav a.active {
+  color: white;
+}
+
+#welcome {
+  background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./assets/medium-shot-man-painting-watercolors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20vw;
+  color: white;
+}
+
+#welcome h1 {
+  font-size: var(--xlfs);
+  font-weight: 600;
+}
+
+#innovation .about-our-program {
+  padding: 100px 150px;
+  font-size: var(--lfs);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#innovation .side-note {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("./assets/top-view-colorful-aquarelle-with-copy-space.jpg");
+  background-repeat: no-repeat;
+  height: 105vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-shadow: 1px 1px 2px black;
+  font-size: var(--lfs);
+  font-weight: 600;
+  padding: 0 10vw;
+}
+
+#learn-with-icreate {
+  padding: 50px;
+  padding-bottom: 0;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+/* #learn-with-icreate .title {
+  position: relative;
+  top: 20px;
+} */
+
+#learn-with-icreate .program {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
-  gap: 20px;
+  min-height: 100vh;
+  text-align: left;
+  /* border: 2px solid red; */
 }
 
-#our-project h1,
-#our-project h2 {
-  color: orangered;
+#learn-with-icreate .program .image {
+  height: 380px;
+  border-radius: 30px;
+  /* border: 2px solid red; */
 }
 
-#our-project .about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-container {
-  overflow: hidden;
-  position: relative;
-  height: 95vh;
-  /* color: white; */
-}
-.swiper-container [class*="swiper-button"] {
-  /* color: black; */
-}
-
-.swiper-container .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 30px;
-  gap: 10px;
-  position: relative;
-}
-
-.swiper-container .swiper-slide img {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
-.swiper-container i {
-  color: black;
+#learn-with-icreate .program h1 {
+  font-size: var(--xlfs);
+  font-weight: 600;
+  margin-bottom: 10px;
 }

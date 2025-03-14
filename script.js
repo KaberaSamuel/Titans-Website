@@ -1,40 +1,29 @@
-const navbar = document.querySelector("nav");
-const home = document.querySelector("#home");
-let lastYScroll = 0;
+// link tab synchronization
+(function () {
+  const sections = document.querySelectorAll("body > section");
+  const viewportMargin = window.innerHeight * 0.5;
 
-window.addEventListener("scroll", () => {
-  const yScroll = window.scrollY;
+  sectionsObserver = new IntersectionObserver(intersectionCallback, {
+    threshold: 0,
+    rootMargin: `-${viewportMargin}px 0px -${viewportMargin}px 0px`,
+  });
 
-  // down scroll
-  if (yScroll > lastYScroll) {
-    // checking if not in home page view
-    if (yScroll > home.clientHeight) {
-      navbar.style.backgroundColor = "rgba(0,0,0.8)";
-      navbar.style.backdropFilter = "blur(5px)";
-    }
-    navbar.style.top = "-60px";
+  function intersectionCallback(entries) {
+    entries.forEach((entry) => {
+      const queryString = `a[href="#${entry.target.id}"]`;
+      const respectiveAnchor = document.querySelector(queryString);
 
-    // up scroll
-  } else {
-    // checking if in home page view
-    if (yScroll < home.clientHeight) {
-      navbar.style.backdropFilter = "blur(0px)";
-      navbar.style.backgroundColor = "rgba(0,0,0,0)";
-    }
-
-    navbar.style.top = "0px";
+      if (entry.isIntersecting) {
+        respectiveAnchor.classList.add("active");
+      } else {
+        respectiveAnchor.classList.remove("active");
+      }
+    });
   }
 
-  lastYScroll = yScroll;
-});
+  sections.forEach((section) => {
+    sectionsObserver.observe(section);
+  });
+})();
 
-// swiper js
-const swiper = new Swiper(".swiper-container", {
-  direction: "horizontal",
-  slidesPerView: 1,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// horizontal scrolling
