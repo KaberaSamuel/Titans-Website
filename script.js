@@ -26,4 +26,15 @@
   });
 })();
 
-// horizontal scrolling
+// Learning Timeline Functionalities
+(function () {
+  const cards = document.querySelectorAll("#learning-timeline .card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.classList.contains("button")) {
+        card.classList.toggle("flipped");
+      }
+    });
+  });
+})();
