@@ -1,11 +1,13 @@
 :root {
   --white: rgb(250, 250, 250);
   --dark: rgb(10, 10, 10);
+  --lightdark: rgb(40, 40, 40);
   --xsfs: 0.7rem;
   --sfs: 0.9rem;
   --fs: 1.2rem;
   --lfs: 1.6rem;
   --xlfs: 2rem;
+  --xxlfs: 2.5rem;
 }
 
 * {
@@ -36,6 +38,23 @@ img {
 
 .image {
   overflow: hidden;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 45px;
+  padding-top: 5px;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 3px 1px rgb(180, 180, 180);
+  outline: none;
+}
+
+textarea {
+  height: 100px;
 }
 
 body {
@@ -76,6 +95,7 @@ nav a.active {
   color: white;
 }
 
+/* Welcome page */
 #welcome {
   background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
     url("./assets/medium-shot-man-painting-watercolors.jpg");
@@ -93,6 +113,7 @@ nav a.active {
   font-weight: 600;
 }
 
+/* Innovation page */
 #innovation .about-our-program {
   padding: 100px 150px;
   font-size: var(--lfs);
@@ -147,6 +168,7 @@ nav a.active {
   margin-bottom: 10px;
 }
 
+/* Learning timeline page */
 #learning-timeline {
   display: grid;
   grid-template-columns: 1fr 20% 1fr;
@@ -156,16 +178,13 @@ nav a.active {
   /* border: 2px solid green; */
 }
 
-#learning-timeline > * {
-  /* border: 2px solid red; */
-}
-
 #learning-timeline h1 {
   font-size: var(--sfs);
 }
 
 #learning-timeline .center {
   align-content: center;
+  color: rgb(257, 125, 70);
   font-size: var(--fs);
   font-weight: 700;
   font-family: cursive;
@@ -214,7 +233,7 @@ nav a.active {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: rgba(253, 121, 69, 0.75);
+  background: rgba(253, 121, 69, 0.8);
   color: white;
   display: flex;
   flex-direction: column;
@@ -247,4 +266,60 @@ nav a.active {
   border-radius: 20px;
   margin-top: 5px;
   font-size: 0.6rem;
+}
+
+/* contact us page */
+#contact-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 60px;
+  text-align: left;
+}
+
+#contact-us .about-message {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#contact-us h1 {
+  font-weight: 600;
+  font-size: var(--xxlfs);
+  /* margin-bottom: 50px; */
+}
+
+#contact-us .points div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#contact-us form {
+  background-color: white;
+  color: var(--lightdark);
+  min-height: 80vh;
+  padding: 20px 25px;
+  border-radius: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: var(--sfs);
+}
+
+#contact-us form label {
+  font-weight: 600;
+}
+
+#contact-us form button {
+  justify-content: center;
+  padding: 11px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--lightdark);
+  color: var(--white);
 }
