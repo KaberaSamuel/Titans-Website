@@ -234,14 +234,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="dialog">
-        <div>
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <p>Click on the step to learn more</p>
-      </div> -->
     </section>
 
     <section id="contact-us">
@@ -295,5 +287,38 @@
         </form>
       </div>
     </section>
+
+    <div class="intro">
+      <div class="logo">
+        <div class="loader"></div>
+      </div>
+      <div class="content">
+        <p>Welcome to,</p>
+        <p>Icreate Rwanda</p>
+      </div>
+
+      <div class="getting-ready">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+
+    <script>
+      // page intro animation
+      (function () {
+        const logo = document.querySelector(".intro .logo");
+        const introPage = document.querySelector(".intro");
+        logo.classList.add("show");
+        document.body.classList.add("remove-scrolling");
+
+        setTimeout(() => {
+          document.body.classList.remove("remove-scrolling");
+          introPage.style.opacity = "0";
+        }, 5000);
+
+        setTimeout(() => {
+          document.querySelector(".intro").remove();
+        }, 7000);
+      })();
+    </script>
   </body>
 </html>

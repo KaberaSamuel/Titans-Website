@@ -67,6 +67,10 @@ body {
   text-align: center;
 }
 
+body.remove-scrolling {
+  overflow: hidden;
+}
+
 body > section {
   min-height: 100vh;
 }
@@ -322,4 +326,189 @@ nav a.active {
   border: none;
   background-color: var(--lightdark);
   color: var(--white);
+}
+
+/* Page Intro */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: black;
+  color: white;
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.intro .logo {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-150px, -50%);
+  animation: 1s ease 1s both animate-logo;
+}
+
+.intro .content {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  text-align: left;
+  font-size: var(--fs);
+  padding-left: 30px;
+  transform: translate(-100px, -50%);
+}
+
+.intro .content p {
+  animation: 1s ease-in-out both intro-content-reveal-left;
+}
+
+.intro .content p:first-of-type {
+  animation-delay: 2s;
+}
+
+.intro .content :nth-of-type(2) {
+  animation: 1s ease-in-out both intro-content-reveal-right;
+  animation-delay: 2.2s;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+.intro .getting-ready {
+  width: 50vw;
+  height: 7px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.intro .getting-ready .progress-bar {
+  background-color: #ff3d00;
+  height: 100%;
+  animation: 5s ease-in progress-bar both;
+}
+
+@keyframes animate-logo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-content-reveal-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes intro-content-reveal-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes progress-bar {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
 }
