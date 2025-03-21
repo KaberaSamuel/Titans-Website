@@ -14,6 +14,14 @@
     />
 
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal">
+      ScrollReveal({
+        reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay:  400
+       });
+    </script>
   </head>
 
   <body>
@@ -23,6 +31,7 @@
       <a href="#programs">Programs</a>
       <a href="#learning-timeline">Learning timeline</a>
       <a href="#contact-us">Contact us</a>
+      <a href="#meet-team">Meet team</a>
     </nav>
 
     <section id="welcome">
@@ -288,7 +297,68 @@
       </div>
     </section>
 
-    <div class="intro">
+    <section id="meet-team">
+      <div class="team-member">
+        <div class="image">
+          <img src="./assets/Lincoln_team_member.jpeg" />
+        </div>
+
+        <div class="about">
+          <h2>
+            Lincoln <br />
+            Batsinduka
+          </h2>
+          <p>Art Coach</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="image">
+          <img src="./assets/Samuel_team_member.jpg" />
+        </div>
+
+        <div class="about">
+          <h2>
+            Kabera <br />
+            Samuel
+          </h2>
+          <p>CGI Coach</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="image">
+          <img src="./assets/Nepo_team_member.jpeg" />
+        </div>
+
+        <div class="about">
+          <h2>
+            Jean <br />
+            Nepo
+          </h2>
+          <p>Visionary Leader</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="image">
+          <img src="./assets/Irene_team_member.jpg" />
+        </div>
+
+        <div class="about">
+          <h2>
+            Shami <br />
+            Irene
+          </h2>
+          <p>Public Relations Manager</p>
+        </div>
+      </div>
+
+      <div class="background">
+        <div class="one">Meet The Team</div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+    </section>
+
+    <!-- <div class="intro">
       <div class="logo">
         <div class="loader"></div>
       </div>
@@ -300,24 +370,12 @@
       <div class="getting-ready">
         <div class="progress-bar"></div>
       </div>
-    </div>
+    </div> -->
 
     <script>
-      // page intro animation
+      // scroll into view animation
       (function () {
-        const logo = document.querySelector(".intro .logo");
-        const introPage = document.querySelector(".intro");
-        logo.classList.add("show");
-        document.body.classList.add("remove-scrolling");
-
-        setTimeout(() => {
-          document.body.classList.remove("remove-scrolling");
-          introPage.style.opacity = "0";
-        }, 5000);
-
-        setTimeout(() => {
-          document.querySelector(".intro").remove();
-        }, 7000);
+        ScrollReveal().reveal("#innovation");
       })();
     </script>
   </body>
