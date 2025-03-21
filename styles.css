@@ -1,5 +1,6 @@
 :root {
   --white: rgb(250, 250, 250);
+  --lightwhite: rgb(200, 200, 200);
   --dark: rgb(10, 10, 10);
   --lightdark: rgb(40, 40, 40);
   --xsfs: 0.7rem;
@@ -179,7 +180,11 @@ nav a.active {
   padding: 10px 200px;
   font-size: var(--xsfs);
   position: relative;
+  background-image: radial-gradient(rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("./assets/minimalist\ art.jpg");
+  background-size: cover;
   /* border: 2px solid green; */
+  color: white;
 }
 
 #learning-timeline h1 {
@@ -188,7 +193,7 @@ nav a.active {
 
 #learning-timeline .center {
   align-content: center;
-  color: rgb(257, 125, 70);
+  /* color: rgb(257, 125, 70); */
   font-size: var(--fs);
   font-weight: 700;
   font-family: cursive;
@@ -227,6 +232,12 @@ nav a.active {
   transition: transform 1s;
 }
 
+#learning-timeline .card .card-number {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
 #learning-timeline .card.flipped {
   transform: translateX(-100%) rotateY(-180deg);
 }
@@ -237,8 +248,8 @@ nav a.active {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: rgba(253, 121, 69, 0.8);
-  color: white;
+  backdrop-filter: blur(10px);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -247,6 +258,7 @@ nav a.active {
   padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
+  border: 0.5px solid var(--white);
 }
 
 #learning-timeline .card .front {
