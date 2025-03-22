@@ -39,6 +39,28 @@
   });
 })();
 
+// footer functionalities
+(function () {
+  const footer = document.querySelector("footer");
+  const navbar = document.querySelector("nav");
+
+  footerObserver = new IntersectionObserver(intersectionCallback, {
+    threshold: 0.2,
+  });
+
+  function intersectionCallback(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navbar.style.opacity = 0;
+      } else {
+        navbar.style.opacity = 1;
+      }
+    });
+  }
+
+  footerObserver.observe(footer);
+})();
+
 // page intro animation
 // (function () {
 //   const logo = document.querySelector(".intro .logo");
