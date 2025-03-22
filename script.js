@@ -62,18 +62,18 @@
 })();
 
 // page intro animation
-// (function () {
-//   const logo = document.querySelector(".intro .logo");
-//   const introPage = document.querySelector(".intro");
-//   logo.classList.add("show");
-//   document.body.classList.add("remove-scrolling");
+(function () {
+  const logo = document.querySelector(".intro .logo");
+  const introPage = document.querySelector(".intro");
+  logo.classList.add("show");
+  document.body.classList.add("remove-scrolling");
 
-//   setTimeout(() => {
-//     document.body.classList.remove("remove-scrolling");
-//     introPage.style.opacity = "0";
-//   }, 5500);
+  setTimeout(() => {
+    document.body.classList.remove("remove-scrolling");
+    introPage.style.opacity = "0";
+  }, 5500);
 
-//   setTimeout(() => {
-//     document.querySelector(".intro").remove();
-//   }, 7000);
-// })();
+  setTimeout(() => {
+    document.querySelector(".intro").remove();
+  }, 7000);
+})();
