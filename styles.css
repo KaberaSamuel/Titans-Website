@@ -83,13 +83,14 @@ body > section {
 }
 
 nav {
+  width: max-content;
   position: fixed;
   bottom: 10px;
   right: 50%;
   transform: translateX(50%);
   margin: 0 auto;
   background-color: rgba(25, 25, 25, 0.8);
-  padding: 11px 22px;
+  padding: 10px 20px;
   border-radius: 20px;
   display: flex;
   gap: 30px;
@@ -185,7 +186,7 @@ nav a.active {
   display: grid;
   grid-template-columns: 1fr 20% 1fr;
   padding: 10px 200px;
-  font-size: var(--xsfs);
+  font-size: var(--sfs);
   position: relative;
   background-image: radial-gradient(rgb(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url("./assets/minimalist\ art.jpg");
@@ -201,7 +202,7 @@ nav a.active {
 #learning-timeline .center {
   align-content: center;
   /* color: rgb(257, 125, 70); */
-  font-size: var(--fs);
+  font-size: 0.8rem;
   font-weight: 700;
   font-family: cursive;
   line-height: 1.2;
@@ -279,7 +280,8 @@ nav a.active {
 }
 
 #learning-timeline .card .back {
-  gap: 0;
+  gap: 5px;
+  font-size: var(--xsfs);
   transform: rotateY(180deg);
 }
 
@@ -289,6 +291,124 @@ nav a.active {
   border-radius: 20px;
   margin-top: 5px;
   font-size: 0.6rem;
+}
+
+/* Journey page */
+#challenges {
+  display: grid;
+  grid-template-rows: 400px 1fr;
+  color: white;
+}
+
+#challenges .top {
+  background-color: var(--dark);
+  padding-top: 50px;
+  background: linear-gradient(to top, rgb(50, 50, 50), black);
+}
+
+#challenges .bottom {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0 50px;
+  font-weight: 600;
+}
+
+#challenges .bottom .image {
+  transform: translateY(-150px);
+  position: relative;
+}
+
+#challenges .bottom .image img {
+  filter: brightness(50%);
+  transition: scale 0.5s;
+}
+
+#challenges .bottom .image div {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 20px 30px;
+}
+
+#challenges .bottom .image .overlay-text {
+  position: absolute;
+  inset: 50% 0 0 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition-property: opacity, transform;
+  transition-duration: 0.5s;
+}
+
+#challenges .bottom .image:hover .overlay-text {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+#challenges .bottom .image:hover img {
+  scale: 1.1;
+}
+
+#carousel-challenges {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  opacity: 1;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+#carousel-challenges.hidden {
+  z-index: -15;
+  opacity: 0;
+}
+
+#carousel-challenges .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#carousel-challenges .swiper-slide {
+  padding: 100px 70px;
+  display: flex;
+  gap: 30px;
+}
+
+#carousel-challenges .swiper-slide .content {
+  padding-top: 50px;
+  text-align: left;
+}
+
+#carousel-challenges .swiper-slide .content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#carousel-challenges iframe {
+  width: 1200px;
+  height: 100%;
+}
+
+#carousel-challenges #close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: fit-content;
+  height: fit-content;
+  pointer-events: all;
+  /* border: 2px solid red; */
+}
+
+#carousel-challenges #close i {
+  font-size: var(--lfs);
 }
 
 /* Meet team */
