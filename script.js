@@ -168,16 +168,16 @@
     },
   });
 
-  const openingAnchors = document.querySelectorAll("#challenegs a");
-  const closingButton = document.querySelector("#carousel-challenges #close i");
+  const openingChallenges = document.querySelectorAll("#challenges .image i");
+  const closingButton = document.querySelector("#carousel-challenges #close");
   const carousel = document.querySelector("#carousel-challenges");
 
   closingButton.addEventListener("click", () => {
     carousel.classList.add("hidden");
   });
 
-  openingAnchors.forEach((icon) => {
-    icon.addEventListener("click", () => {
+  openingChallenges.forEach((div) => {
+    div.addEventListener("click", () => {
       carousel.classList.remove("hidden");
     });
   });

@@ -29,6 +29,7 @@ a {
 i {
   color: white;
   font-size: var(--sfs);
+  pointer-events: all;
 }
 
 img {
@@ -318,6 +319,7 @@ nav a.active {
 #challenges .bottom .image {
   transform: translateY(-150px);
   position: relative;
+  height: 450px;
 }
 
 #challenges .bottom .image img {
@@ -364,6 +366,7 @@ nav a.active {
   opacity: 1;
   background-color: var(--dark);
   color: var(--white);
+  transition: opacity 0.5s;
 }
 
 #carousel-challenges.hidden {
@@ -400,11 +403,10 @@ nav a.active {
 #carousel-challenges #close {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 25px;
   width: fit-content;
   height: fit-content;
-  pointer-events: all;
-  /* border: 2px solid red; */
+  z-index: 20;
 }
 
 #carousel-challenges #close i {
