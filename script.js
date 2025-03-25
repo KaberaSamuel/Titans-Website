@@ -62,123 +62,57 @@
 })();
 
 // page intro animation
-// (function () {
-//   const logo = document.querySelector(".intro .logo");
-//   const introPage = document.querySelector(".intro");
-//   logo.classList.add("show");
-//   document.body.classList.add("remove-scrolling");
+(function () {
+  const logo = document.querySelector(".intro .logo");
+  const introPage = document.querySelector(".intro");
+  logo.classList.add("show");
+  document.body.classList.add("remove-scrolling");
 
-//   setTimeout(() => {
-//     document.body.classList.remove("remove-scrolling");
-//     introPage.style.opacity = "0";
-//   }, 5500);
+  setTimeout(() => {
+    document.body.classList.remove("remove-scrolling");
+    introPage.style.opacity = "0";
+  }, 6000);
 
-//   setTimeout(() => {
-//     document.querySelector(".intro").remove();
-//   }, 7000);
-// })();
-
-// scroll into view animation
-// (function () {
-//   ScrollReveal({
-//     reset: true,
-//     distance: "70px",
-//     duration: 2500,
-//     delay: 100,
-//   });
-
-//   // programs page
-//   ScrollReveal().reveal("#programs .title", {
-//     origin: "left",
-//     delay: 100,
-//   });
-
-//   ScrollReveal().reveal("#programs .program .right", {
-//     origin: "right",
-//     delay: 200,
-//   });
-
-//   ScrollReveal().reveal("#programs .program .left", {
-//     origin: "left",
-//     delay: 300,
-//   });
-
-//   ScrollReveal().reveal("#programs .program .image", {
-//     origin: "bottom",
-//     delay: 300,
-//   });
-
-//   ScrollReveal().reveal("#programs > div >:nth-child(2) .image", {
-//     origin: "top",
-//     delay: 300,
-//   });
-
-//   // learning timeline page
-//   ScrollReveal().reveal("#learning-timeline .left .step", {
-//     origin: "left",
-//     delay: 100,
-//     interval: 300,
-//   });
-
-//   ScrollReveal().reveal("#learning-timeline .right .step", {
-//     origin: "right",
-//     delay: 400,
-//     interval: 300,
-//   });
-
-//   // team page
-//   ScrollReveal().reveal("#meet-team .background p", {
-//     origin: "bottom",
-//     delay: 100,
-//   });
-
-//   ScrollReveal().reveal("#meet-team .up", {
-//     origin: "top",
-//     delay: 200,
-//   });
-
-//   ScrollReveal().reveal("#meet-team .bottom", {
-//     origin: "bottom",
-//     delay: 100,
-//   });
-
-//   ScrollReveal().reveal("#meet-team .left", {
-//     origin: "left",
-//     delay: 100,
-//   });
-
-//   ScrollReveal().reveal("#meet-team .right", {
-//     origin: "right",
-//     delay: 300,
-//   });
-
-//   // general bottom
-//   // ScrollReveal().reveal("#welcome h1, .side-note p", {
-//   //   origin: "bottom",
-//   // });
-// })();
+  setTimeout(() => {
+    document.querySelector(".intro").remove();
+  }, 7000);
+})();
 
 // Challenges Page
 (function () {
   const swiper = new Swiper(".swiper", {
-    // Navigation arrows
+    speed: 1000,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
 
-  const openingChallenges = document.querySelectorAll("#challenges .image i");
+  const challngesIcons = document.querySelectorAll("#challenges .image i");
   const closingButton = document.querySelector("#carousel-challenges #close");
   const carousel = document.querySelector("#carousel-challenges");
 
   closingButton.addEventListener("click", () => {
     carousel.classList.add("hidden");
+    document.body.style.overflow = "auto";
   });
 
-  openingChallenges.forEach((div) => {
-    div.addEventListener("click", () => {
-      carousel.classList.remove("hidden");
+  challngesIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const classname = icon.className;
+      const slideId = Number(classname.at(-1));
+      swiper.slideTo(slideId - 1);
+
+      setTimeout(() => {
+        carousel.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }, 300);
     });
   });
 })();

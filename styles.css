@@ -301,10 +301,22 @@ nav a.active {
   color: white;
 }
 
+#challenges .top h1 {
+  font-size: var(--xlfs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
 #challenges .top {
   background-color: var(--dark);
   padding-top: 50px;
   background: linear-gradient(to top, rgb(50, 50, 50), black);
+}
+
+#challenges .top h1 {
+  font-size: var(--xlfs);
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 #challenges .bottom {
@@ -380,7 +392,7 @@ nav a.active {
 }
 
 #carousel-challenges .swiper-slide {
-  padding: 100px 70px;
+  padding: 80px 70px;
   display: flex;
   gap: 30px;
 }
@@ -388,29 +400,54 @@ nav a.active {
 #carousel-challenges .swiper-slide .content {
   padding-top: 50px;
   text-align: left;
+  color: var(--lightwhite);
 }
 
 #carousel-challenges .swiper-slide .content h1 {
   text-align: center;
   margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: var(--lfs);
 }
 
-#carousel-challenges iframe {
-  width: 1200px;
+#carousel-challenges iframe,
+#carousel-challenges .image {
+  min-width: 600px;
+  max-width: 700px;
   height: 100%;
 }
 
 #carousel-challenges #close {
   position: fixed;
   top: 20px;
-  right: 25px;
+  right: 30px;
   width: fit-content;
   height: fit-content;
   z-index: 20;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+#carousel-challenges #close:hover {
+  opacity: 1;
 }
 
 #carousel-challenges #close i {
   font-size: var(--lfs);
+}
+
+#carousel-challenges a {
+  text-decoration: underline;
+  color: #ff3d00;
+}
+
+#carousel-challenges .swiper-pagination-bullet {
+  background-color: white;
+}
+
+#carousel-challenges [class*="swiper-button"] {
+  color: white;
 }
 
 /* Meet team */
@@ -641,7 +678,7 @@ footer p {
 }
 
 .intro .content p {
-  animation: 1.2s ease-in-out both intro-content-reveal-left;
+  animation: 1.5s ease-in-out both intro-content-reveal-left;
 }
 
 .intro .content p:first-of-type {
@@ -651,6 +688,11 @@ footer p {
 .intro .content :nth-of-type(2) {
   animation: 1s ease-in-out both intro-content-reveal-right;
   animation-delay: 1.8s;
+}
+
+.intro .content :nth-of-type(3) {
+  animation: 1s ease-in-out both intro-content-reveal-bottom;
+  animation-delay: 2s;
 }
 
 .loader {
@@ -696,7 +738,7 @@ footer p {
 .intro .getting-ready .progress-bar {
   background-color: #ff3d00;
   height: 100%;
-  animation: 5.5s ease progress-bar both;
+  animation: 6s ease progress-bar both;
 }
 
 @keyframes animate-logo {
@@ -729,6 +771,18 @@ footer p {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes intro-content-reveal-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
